@@ -1,56 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import faker from 'faker';
+import CommentDetail from "./CommentDetail";
+import faker from "faker";
 
-//example of non-reuseable JSX
+//example of showing 1 component within another
 const App = () => {
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                    Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date"> Today at 6pm</span>
-                    </div>
-                    <div className="text">Nice blog post!
-                    </div>
-                </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                    Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date"> Today at 6pm</span>
-                    </div>
-                    <div className="text">Nice blog post!
-                    </div>
-                </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                    Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date"> Today at 6pm</span>
-                    </div>
-                    <div className="text">Nice blog post!
-                    </div>
-                </div>
-            </div>
+           <CommentDetail 
+           author="Sam"
+           date="12th June"
+           text="Nice blog!"
+           avatar={faker.image.avatar()}
+           />
+           <CommentDetail 
+           author="Jane"
+           date="14th Feb"
+           text="Lost interest!"
+           avatar={faker.image.avatar()}
+
+           />  
+           <CommentDetail 
+           author="Alex"
+           date="1st Dec"
+           text="Learnt lots - thanks"
+           avatar={faker.image.avatar()}
+
+           />     
         </div>
     );       
 };
